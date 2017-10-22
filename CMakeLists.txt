@@ -17,6 +17,12 @@ include_directories(
 
 add_executable(calc-module message.cpp kafka_connector.cpp main.cpp)
 
+set_target_properties(calc-module PROPERTIES
+    CXX_STANDARD 11
+    CXX_STANDARD_REQUIRED YES
+    CXX_EXTENSIONS NO
+)
+
 target_link_libraries(
 	calc-module
 
