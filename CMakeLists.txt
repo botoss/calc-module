@@ -17,13 +17,11 @@ include_directories(
 	${Boost_INCLUDE_DIRS}
 )
 
-set(SOURCES
+add_executable(calc-module
 	"${SRC_DIR}/main.cpp"
 	"${SRC_DIR}/kafka_connector.cpp"
 	"${SRC_DIR}/message.cpp"	
 )
-
-add_executable(calc-module "${SOURCES}")
 
 set_target_properties(calc-module PROPERTIES
     CXX_STANDARD 11
