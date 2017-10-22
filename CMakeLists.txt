@@ -6,8 +6,10 @@ set(Boost_USE_STATIC_LIBS   ON)
 find_package(Threads)
 find_package(Boost COMPONENTS system log log_setup thread REQUIRED)
 
+set(SRC_DIR "./src")
+
 include_directories(
-	.
+	${SRC_DIR}
 	${Threads_INCLUDE_DIR}
 	SYSTEM
 	${RDKAFKA_INCLUDE_DIR}
@@ -15,7 +17,13 @@ include_directories(
 	${Boost_INCLUDE_DIRS}
 )
 
-add_executable(calc-module message.cpp kafka_connector.cpp main.cpp)
+set(SOURCES
+	"${SRC_DIR}/main.cpp"
+	"${SRC_DIR}/kafka_connector.cpp"
+	"${SRC_DIR}/message.cpp"	
+)
+
+add_executable(calc-module "${SOURCES}")
 
 set_target_properties(calc-module PROPERTIES
     CXX_STANDARD 11
