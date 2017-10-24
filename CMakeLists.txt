@@ -4,7 +4,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(Boost_USE_STATIC_LIBS   ON)
 
 find_package(Threads)
-find_package(Boost COMPONENTS system log log_setup thread REQUIRED)
+find_package(Boost COMPONENTS system filesystem log log_setup thread REQUIRED)
 
 set(SRC_DIR "./src")
 
